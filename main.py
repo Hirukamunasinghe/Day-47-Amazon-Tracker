@@ -11,6 +11,7 @@ MY_EMAIL ="munasinghehiruka@gmail.com"
 PASSWORD ="Google Company"
 response = requests.get(url=URL,headers=headers)
 
+
 website_html = response.text
 #print(website_html)
 soup = BeautifulSoup(website_html,"lxml")
@@ -18,8 +19,7 @@ soup = BeautifulSoup(website_html,"lxml")
 
 #Getting the price of the product
 heading = soup.find(name="span",class_="a-price-whole").getText()
-price = heading.split("$")[0]
-product_price = float(price)
+product_price = float(heading.split("$")[0])
 print(product_price)
 
 #Getting the title of the product
